@@ -1,0 +1,18 @@
+model User {
+  id   ID     @unique
+  name String
+}
+
+model Collection {
+  id    ID     @unique
+  title String @unique
+  items Item[]
+}
+
+model Item {
+  id         ID         @unique
+  name       String
+  imageUrl   String
+  price      Float
+  collection Collection
+}
